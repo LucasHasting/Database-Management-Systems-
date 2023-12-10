@@ -1,4 +1,3 @@
--- 1-4
 CREATE TABLE store_reps
 (
     rep_ID NUMBER(5),
@@ -16,7 +15,6 @@ CREATE TABLE store_reps
     Primary Key (rep_ID)
 );
 
--- 5-7
 CREATE TABLE BOOK_STORES
 (
     Store_ID NUMBER(8),
@@ -27,7 +25,6 @@ CREATE TABLE BOOK_STORES
     Primary Key (Store_ID)
 );
 
--- 8 
 CREATE TABLE REP_CONTRACTS
 (
     Store_ID NUMBER(8),
@@ -38,10 +35,9 @@ CREATE TABLE REP_CONTRACTS
     Constraint ValidTwo FOREIGN KEY (Store_ID) REFERENCES Book_stores (Store_ID),
     Constraint ValidThree FOREIGN KEY (REP_ID) REFERENCES store_reps (rep_ID)
 );
---9
+
 SELECT * FROM user_cons_columns WHERE table_name = 'STORE_REPS';
 
---10
 ALTER TABLE store_reps DISABLE 
 constraint Base_SC; 
 ALTER TABLE store_reps ENABLE 
